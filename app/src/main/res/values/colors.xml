@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="selectable_item_background_normal">@android:color/white</color>
+    <color name="selectable_item_background_pressed">#ffeeeeee</color>
+    <color name="selectable_item_background_transparent_pressed">#44eeeeee</color>
+    <color name="text_color_primary">#ff212121</color>
+    <color name="text_color_secondary">#ff757575</color>
+    <color name="text_color_gray">#ffa8b2bd</color>
+    <color name="text_item_footer">#33000000</color>
+    <color name="text_item_header">#ff000000</color>
+</resources>

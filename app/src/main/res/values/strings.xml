@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AndroidAnimationDemo</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_path_animation_bounce_ball">路径动画</string>
+    <string name="desc_path_animation_bounce_ball">使用Path来规划小球动画的轨迹</string>
+</resources>
