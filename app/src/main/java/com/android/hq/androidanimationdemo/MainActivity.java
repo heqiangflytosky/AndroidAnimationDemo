@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends Activity {
     public static final int BOUNCE_BALL_DEMO = 1;
+    public static final int THREE_DIMENS_TOUCH_DEMO = 2;
 
     private RecyclerView mRecyclerView;
     private ListAdapter mListAdapter;
@@ -54,6 +55,8 @@ public class MainActivity extends Activity {
         ArrayList<ListAdapter.DataBean> list = new ArrayList<>();
         list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_path_animation_bounce_ball),
                 getResources().getString(R.string.desc_path_animation_bounce_ball), BOUNCE_BALL_DEMO));
+        list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_3d_touch),
+                getResources().getString(R.string.desc_3d_touch), THREE_DIMENS_TOUCH_DEMO));
 
         mListAdapter.updateData(list);
     }

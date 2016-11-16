@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.android.hq.androidanimationdemo.activity.BounceBallPathActivity;
+import com.android.hq.androidanimationdemo.bounceballpath.BounceBallPathActivity;
+import com.android.hq.androidanimationdemo.touch3d.ThreeDimensTouchActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +39,13 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         contentViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = null;
                 if(item.type == MainActivity.BOUNCE_BALL_DEMO){
-                    Intent intent = new Intent(mActivity, BounceBallPathActivity.class);
-                    mActivity.startActivity(intent);
+                    intent = new Intent(mActivity, BounceBallPathActivity.class);
+                }else if(item.type == MainActivity.THREE_DIMENS_TOUCH_DEMO){
+                    intent = new Intent(mActivity, ThreeDimensTouchActivity.class);
                 }
+                mActivity.startActivity(intent);
             }
         });
     }

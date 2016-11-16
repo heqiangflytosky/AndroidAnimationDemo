@@ -1,4 +1,4 @@
-package com.android.hq.androidanimationdemo.activity;
+package com.android.hq.androidanimationdemo.bounceballpath;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.hq.androidanimationdemo" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,8 +20,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.BounceBallPathActivity"
+        <activity android:name=".bounceballpath.BounceBallPathActivity"
                   android:label="BounceBallPathActivity"
+                  android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".touch3d.ThreeDimensTouchActivity"
+                  android:label="3DTouchActivity"
                   android:screenOrientation="portrait">
 
         </activity>
