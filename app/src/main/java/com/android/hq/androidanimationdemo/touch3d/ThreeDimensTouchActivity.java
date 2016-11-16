@@ -17,19 +17,21 @@ import com.android.hq.androidanimationdemo.R;
 public class ThreeDimensTouchActivity extends Activity {
     private TopLayout mTopLayout;
     private WebView mWebView;
-    private View mBottomLayout;
     private ProgressBar mProgressBar;
+    private View mBottomLayout;
+    private ProgressBar mBottomProgressBar;
     private WebView mBottomWebView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActionBar().setElevation(0f);//取出ActionBar阴影
         setContentView(R.layout.activity_3d_touch_layout);
         mTopLayout = (TopLayout) findViewById(R.id.top_layout);
         mTopLayout.setVisibility(View.GONE);
         mWebView = (WebView) findViewById(R.id.top_webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new WebViewClient());
-        mWebView.setWebChromeClient(new WebChromeClient());
+        mWebView.setWebChromeClient(mWebChromeClient);
         mWebView.loadUrl("http://m.sohu.com");
         mWebView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -47,13 +49,14 @@ public class ThreeDimensTouchActivity extends Activity {
                 return false;
             }
         });
+        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
         mBottomLayout = findViewById(R.id.bottom_layout);
-        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        mBottomProgressBar = (ProgressBar) findViewById(R.id.bottom_progress_bar);
         mBottomWebView = (WebView) findViewById(R.id.bottom_webview);
         mBottomWebView.getSettings().setJavaScriptEnabled(true);
         mBottomWebView.setWebViewClient(new WebViewClient());
-        mBottomWebView.setWebChromeClient(mWebChromeClient);
+        mBottomWebView.setWebChromeClient(mBottomWebChromeClient);
     }
 
     private boolean performLongClick(View v){
@@ -78,10 +81,11 @@ public class ThreeDimensTouchActivity extends Activity {
     }
 
     private void create3DTouchView(String url){
-        mProgressBar.setVisibility(View.VISIBLE);
+        mBottomProgressBar.setVisibility(View.VISIBLE);
         mTopLayout.setVisibility(View.VISIBLE);
 
         mTopLayout.setDrawView(mBottomLayout);
+        mBottomWebView.clearView();
         mBottomWebView.loadUrl(url);
         mTopLayout.invalidate();
     }
@@ -94,16 +98,27 @@ public class ThreeDimensTouchActivity extends Activity {
     }
 
 
-    private WebChromeClient mWebChromeClient = new WebChromeClient(){
+    private WebChromeClient mBottomWebChromeClient = new WebChromeClient(){
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
             super.onProgressChanged(view, newProgress);
             if(mTopLayout.isShown()){
-                mProgressBar.setProgress(newProgress);
+                mBottomProgressBar.setProgress(newProgress);
                 mTopLayout.invalidate();
-                if(newProgress == 100 && mProgressBar.getVisibility() == View.VISIBLE){
-                    mProgressBar.setVisibility(View.GONE);
+                if(newProgress == 100 && mBottomProgressBar.getVisibility() == View.VISIBLE){
+                    mBottomProgressBar.setVisibility(View.GONE);
                 }
+            }
+        }
+    };
+
+    private WebChromeClient mWebChromeClient = new WebChromeClient(){
+        @Override
+        public void onProgressChanged(WebView view, int newProgress) {
+            super.onProgressChanged(view, newProgress);
+            mProgressBar.setProgress(newProgress);
+            if(newProgress == 100 && mProgressBar.getVisibility() == View.VISIBLE){
+                mProgressBar.setVisibility(View.GONE);
             }
         }
     };
