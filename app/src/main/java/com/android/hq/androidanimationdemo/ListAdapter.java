@@ -1,15 +1,11 @@
 package com.android.hq.androidanimationdemo;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.android.hq.androidanimationdemo.bounceballpath.BounceBallPathActivity;
-import com.android.hq.androidanimationdemo.touch3d.ThreeDimensTouchActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,13 +35,7 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         contentViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = null;
-                if(item.type == MainActivity.BOUNCE_BALL_DEMO){
-                    intent = new Intent(mActivity, BounceBallPathActivity.class);
-                }else if(item.type == MainActivity.THREE_DIMENS_TOUCH_DEMO){
-                    intent = new Intent(mActivity, ThreeDimensTouchActivity.class);
-                }
-                mActivity.startActivity(intent);
+                MainActivity.startAnimActivity(mActivity, item.type);
             }
         });
     }

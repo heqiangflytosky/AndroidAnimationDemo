@@ -30,6 +30,13 @@
                   android:screenOrientation="portrait">
 
         </activity>
+
+        <activity android:name=".snow.SnowActivity"
+                  android:label="SnowActivity"
+                  android:screenOrientation="portrait">
+
+        </activity>
+
     </application>
 
 </manifest>

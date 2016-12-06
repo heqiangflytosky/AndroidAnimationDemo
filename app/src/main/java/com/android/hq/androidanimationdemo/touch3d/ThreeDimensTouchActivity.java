@@ -44,7 +44,6 @@ public class ThreeDimensTouchActivity extends Activity {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     dismiss3DTouchView();
-                    return true;
                 }
                 return false;
             }
@@ -92,6 +91,8 @@ public class ThreeDimensTouchActivity extends Activity {
 
     private void dismiss3DTouchView(){
         if(mTopLayout.isShown()){
+            mBottomWebView.clearView();
+            mBottomWebView.loadUrl("about:blank");
             mTopLayout.setVisibility(View.GONE);
             mTopLayout.setDrawView(null);
         }

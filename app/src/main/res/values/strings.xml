@@ -3,8 +3,16 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
     <string name="title_path_animation_bounce_ball">路径动画</string>
     <string name="desc_path_animation_bounce_ball">使用Path来规划小球动画的轨迹</string>
+
     <string name="title_3d_touch">重力按压</string>
     <string name="desc_3d_touch">仿IOS的3DTouch效果，用长按来代替重力按压</string>
+
+    <string name="title_snow">雪花飘飘</string>
+    <string name="desc_snow">实现漫天飞舞的雪花效果，分小雪、中雪、大雪不同级别效果</string>
+    <string name="small_snow">小雪</string>
+    <string name="middle_snow">中雪</string>
+    <string name="heavy_snow">大雪</string>
 </resources>

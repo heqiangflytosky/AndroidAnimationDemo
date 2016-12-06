@@ -1,17 +1,23 @@
 package com.android.hq.androidanimationdemo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.android.hq.androidanimationdemo.bounceballpath.BounceBallPathActivity;
+import com.android.hq.androidanimationdemo.snow.SnowActivity;
+import com.android.hq.androidanimationdemo.touch3d.ThreeDimensTouchActivity;
+
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
     public static final int BOUNCE_BALL_DEMO = 1;
     public static final int THREE_DIMENS_TOUCH_DEMO = 2;
+    public static final int SNOW_DEMO = 3;
 
     private RecyclerView mRecyclerView;
     private ListAdapter mListAdapter;
@@ -57,7 +63,21 @@ public class MainActivity extends Activity {
                 getResources().getString(R.string.desc_path_animation_bounce_ball), BOUNCE_BALL_DEMO));
         list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_3d_touch),
                 getResources().getString(R.string.desc_3d_touch), THREE_DIMENS_TOUCH_DEMO));
+        list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_snow),
+                getResources().getString(R.string.desc_snow), SNOW_DEMO));
 
         mListAdapter.updateData(list);
+    }
+
+    public static void startAnimActivity(Activity activity, int type){
+        Intent intent = null;
+        if(type == MainActivity.BOUNCE_BALL_DEMO){
+            intent = new Intent(activity, BounceBallPathActivity.class);
+        }else if(type == MainActivity.THREE_DIMENS_TOUCH_DEMO){
+            intent = new Intent(activity, ThreeDimensTouchActivity.class);
+        }else if(type == MainActivity.SNOW_DEMO){
+            intent = new Intent(activity, SnowActivity.class);
+        }
+        activity.startActivity(intent);
     }
 }
