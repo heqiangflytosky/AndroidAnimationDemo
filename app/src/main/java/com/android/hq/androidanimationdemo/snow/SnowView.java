@@ -257,20 +257,24 @@ public class SnowView extends View {
         public void handleMessage(Message msg) {
             switch (msg.what){
                 case MSG_PRODUCE_SNOW:
-                    mSnowView.get().produceSnowFlake();
-                    removeMessages(MSG_PRODUCE_SNOW);
-                    sendMessageDelayed(obtainMessage(MSG_PRODUCE_SNOW), mSnowView.get().mProduceSnowInterval);
+                    if(mSnowView.get() != null){
+                        mSnowView.get().produceSnowFlake();
+                        removeMessages(MSG_PRODUCE_SNOW);
+                        sendMessageDelayed(obtainMessage(MSG_PRODUCE_SNOW), mSnowView.get().mProduceSnowInterval);
 
-                    removeMessages(MSG_INVALIDATE_VIEW);
-                    sendMessage(obtainMessage(MSG_INVALIDATE_VIEW));
+                        removeMessages(MSG_INVALIDATE_VIEW);
+                        sendMessage(obtainMessage(MSG_INVALIDATE_VIEW));
+                    }
                     break;
                 case MSG_UPDATE_SNOW:
 
                     break;
                 case MSG_INVALIDATE_VIEW:
-                    mSnowView.get().postInvalidateOnAnimation();
-                    removeMessages(MSG_INVALIDATE_VIEW);
-                    sendMessageDelayed(obtainMessage(MSG_INVALIDATE_VIEW), mSnowView.get().REFRESH_VIEW_INTERVAL);
+                    if(mSnowView.get() != null){
+                        mSnowView.get().postInvalidateOnAnimation();
+                        removeMessages(MSG_INVALIDATE_VIEW);
+                        sendMessageDelayed(obtainMessage(MSG_INVALIDATE_VIEW), mSnowView.get().REFRESH_VIEW_INTERVAL);
+                    }
                     break;
                 default:
                     break;

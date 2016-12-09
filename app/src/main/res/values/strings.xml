@@ -15,4 +15,7 @@
     <string name="small_snow">小雪</string>
     <string name="middle_snow">中雪</string>
     <string name="heavy_snow">大雪</string>
+
+    <string name="title_swipe">滑动删除</string>
+    <string name="desc_swipe">左右滑动删除列表中的子项</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.android.hq.androidanimationdemo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +36,7 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         contentViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.startAnimActivity(mActivity, item.type);
+                mActivity.startActivity(new Intent(mActivity, item.cls));
             }
         });
     }
@@ -65,10 +66,16 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public String title;
         public String desc;
         public int type;
+        public Class<?> cls;
         public DataBean(String title, String desc, int type){
             this.title = title;
             this.desc = desc;
             this.type = type;
+        }
+        public DataBean(String title, String desc, Class<?> cls){
+            this.title = title;
+            this.desc = desc;
+            this.cls = cls;
         }
     }
 }

@@ -10,15 +10,12 @@ import android.view.MenuItem;
 
 import com.android.hq.androidanimationdemo.bounceballpath.BounceBallPathActivity;
 import com.android.hq.androidanimationdemo.snow.SnowActivity;
+import com.android.hq.androidanimationdemo.swipe.SwipeActivity;
 import com.android.hq.androidanimationdemo.touch3d.ThreeDimensTouchActivity;
 
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
-    public static final int BOUNCE_BALL_DEMO = 1;
-    public static final int THREE_DIMENS_TOUCH_DEMO = 2;
-    public static final int SNOW_DEMO = 3;
-
     private RecyclerView mRecyclerView;
     private ListAdapter mListAdapter;
 
@@ -60,24 +57,26 @@ public class MainActivity extends Activity {
     private void setData(){
         ArrayList<ListAdapter.DataBean> list = new ArrayList<>();
         list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_path_animation_bounce_ball),
-                getResources().getString(R.string.desc_path_animation_bounce_ball), BOUNCE_BALL_DEMO));
+                getResources().getString(R.string.desc_path_animation_bounce_ball), BounceBallPathActivity.class));
         list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_3d_touch),
-                getResources().getString(R.string.desc_3d_touch), THREE_DIMENS_TOUCH_DEMO));
+                getResources().getString(R.string.desc_3d_touch), ThreeDimensTouchActivity.class));
         list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_snow),
-                getResources().getString(R.string.desc_snow), SNOW_DEMO));
+                getResources().getString(R.string.desc_snow), SnowActivity.class));
+        list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_swipe),
+                getResources().getString(R.string.desc_swipe), SwipeActivity.class));
 
         mListAdapter.updateData(list);
     }
 
-    public static void startAnimActivity(Activity activity, int type){
-        Intent intent = null;
-        if(type == MainActivity.BOUNCE_BALL_DEMO){
-            intent = new Intent(activity, BounceBallPathActivity.class);
-        }else if(type == MainActivity.THREE_DIMENS_TOUCH_DEMO){
-            intent = new Intent(activity, ThreeDimensTouchActivity.class);
-        }else if(type == MainActivity.SNOW_DEMO){
-            intent = new Intent(activity, SnowActivity.class);
-        }
-        activity.startActivity(intent);
-    }
+//    public static void startAnimActivity(Activity activity, int type){
+//        Intent intent = null;
+//        if(type == MainActivity.BOUNCE_BALL_DEMO){
+//            intent = new Intent(activity, BounceBallPathActivity.class);
+//        }else if(type == MainActivity.THREE_DIMENS_TOUCH_DEMO){
+//            intent = new Intent(activity, ThreeDimensTouchActivity.class);
+//        }else if(type == MainActivity.SNOW_DEMO){
+//            intent = new Intent(activity, SnowActivity.class);
+//        }
+//        activity.startActivity(intent);
+//    }
 }
