@@ -43,6 +43,12 @@
 
         </activity>
 
+        <activity android:name=".rollingcar.RollingCarActivity"
+                  android:label="RollingCarActivity"
+                  android:screenOrientation="portrait">
+
+        </activity>
+
     </application>
 
 </manifest>

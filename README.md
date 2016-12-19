@@ -5,6 +5,7 @@
 <img src="/img/3d_touch.gif" width="360" height="640"/>
 <img src="/img/snow.gif" width="360" height="620"/>
 <img src="/img/swipe_delete.gif" width="360" height="620"/>
+<img src="/img/rolling_car.gif" width="360" height="620"/>
 
 
 ## 关于作者

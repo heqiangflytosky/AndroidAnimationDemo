@@ -18,4 +18,7 @@
 
     <string name="title_swipe">滑动删除</string>
     <string name="desc_swipe">左右滑动删除列表中的子项</string>
+
+    <string name="title_rolling_car">滚动小车</string>
+    <string name="desc_rolling_car">手势滑动小车前进或后退</string>
 </resources>

@@ -1,0 +1,9 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+    <com.android.hq.androidanimationdemo.rollingcar.RollingCarView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>
