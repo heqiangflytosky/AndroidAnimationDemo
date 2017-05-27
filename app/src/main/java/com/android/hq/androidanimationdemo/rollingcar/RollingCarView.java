@@ -1,20 +1,16 @@
 package com.android.hq.androidanimationdemo.rollingcar;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.Scroller;
-
-import com.android.hq.androidanimationdemo.R;
 
 /**
  * Created by heqiang on 16-12-15.
@@ -91,7 +87,6 @@ public class RollingCarView extends View {
     }
 
     private void drawCar(Canvas canvas){
-        Log.e("Test", "mMoveDistance = " + mMoveDistance);
         mMoveDistance = Math.min(mMoveDistance, mMaxMoveDistance);
         mMoveDistance = Math.max(mMoveDistance, -mMaxMoveDistance);
         //draw wheel
