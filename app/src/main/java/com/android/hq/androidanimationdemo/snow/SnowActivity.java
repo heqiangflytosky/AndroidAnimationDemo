@@ -19,7 +19,7 @@ public class SnowActivity extends Activity {
         getActionBar().setElevation(0f);//去除ActionBar阴影
         setContentView(R.layout.activity_snow);
         mSnowView = (SnowView) findViewById(R.id.snow_view);
-        mSnowView.startSnowAnim(SnowView.SNOW_LEVEL_MIDDLE);
+        mSnowView.startSnowAnim(SnowUtils.SNOW_LEVEL_MIDDLE);
     }
 
     @Override
@@ -32,13 +32,13 @@ public class SnowActivity extends Activity {
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         switch (item.getItemId()){
             case R.id.level_small:
-                mSnowView.changeSnowLevel(SnowView.SNOW_LEVEL_SMALL);
+                mSnowView.changeSnowLevel(SnowUtils.SNOW_LEVEL_SMALL);
                 return true;
             case R.id.level_middle:
-                mSnowView.changeSnowLevel(SnowView.SNOW_LEVEL_MIDDLE);
+                mSnowView.changeSnowLevel(SnowUtils.SNOW_LEVEL_MIDDLE);
                 return true;
             case R.id.level_heavy:
-                mSnowView.changeSnowLevel(SnowView.SNOW_LEVEL_HEAVY);
+                mSnowView.changeSnowLevel(SnowUtils.SNOW_LEVEL_HEAVY);
                 return true;
 
         }
