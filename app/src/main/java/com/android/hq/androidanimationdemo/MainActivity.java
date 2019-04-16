@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.android.hq.androidanimationdemo.bounceballpath.BounceBallPathActivity;
+import com.android.hq.androidanimationdemo.draggableView.DraggableViewActivity;
 import com.android.hq.androidanimationdemo.rollingcar.RollingCarActivity;
 import com.android.hq.androidanimationdemo.snow.SnowActivity;
 import com.android.hq.androidanimationdemo.swipe.SwipeActivity;
@@ -67,6 +68,8 @@ public class MainActivity extends Activity {
                 getResources().getString(R.string.desc_swipe), SwipeActivity.class));
         list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_rolling_car),
                 getResources().getString(R.string.desc_rolling_car), RollingCarActivity.class));
+        list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_draggable_view),
+                getResources().getString(R.string.desc_draggable_view), DraggableViewActivity.class));
 
         mListAdapter.updateData(list);
     }

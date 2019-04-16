@@ -21,4 +21,7 @@
 
     <string name="title_rolling_car">滚动小车</string>
     <string name="desc_rolling_car">手势滑动小车前进或后退</string>
+
+    <string name="title_draggable_view">可拖动视图</string>
+    <string name="desc_draggable_view">视图随手势移动，并有吸边效果</string>
 </resources>
