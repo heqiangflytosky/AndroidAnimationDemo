@@ -48,7 +48,9 @@
                   android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".draggableView.DraggableViewActivity" />
+        <activity android:name=".draggableView.DraggableViewActivity"
+            android:label="DraggableViewActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 
