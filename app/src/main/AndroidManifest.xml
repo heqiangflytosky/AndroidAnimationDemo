@@ -51,6 +51,9 @@
         <activity android:name=".draggableView.DraggableViewActivity"
             android:label="DraggableViewActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".draggableView.DraggableViewActivity2"
+            android:label="DraggableViewActivity2"
+            android:screenOrientation="portrait"/>
 
     </application>
 
