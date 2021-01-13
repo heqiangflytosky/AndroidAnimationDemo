@@ -19,7 +19,8 @@ public class DraggableViewActivity2 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActionBar().setElevation(0f);//去除ActionBar阴影
+        //去除ActionBar阴影
+        getActionBar().setElevation(0f);
         setContentView(R.layout.activity_draggable_view_2);
         final ImageView imageView = (ImageView) findViewById(R.id.image_view);
         imageView.setOnClickListener(new View.OnClickListener() {

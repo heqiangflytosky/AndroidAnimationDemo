@@ -27,4 +27,7 @@
 
     <string name="title_draggable_view_2">可拖动视图2</string>
     <string name="desc_draggable_view_2">另外一种方式实现视图随手势移动，并有吸边效果</string>
+
+    <string name="title_drag_drop">Drop And Drop API</string>
+    <string name="desc_drag_drop">演示Android Drop And Drop API 的使用</string>
 </resources>

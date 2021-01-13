@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.android.hq.androidanimationdemo.bounceballpath.BounceBallPathActivity;
+import com.android.hq.androidanimationdemo.draganddrop.DragAndDropActivity;
 import com.android.hq.androidanimationdemo.draggableView.DraggableViewActivity;
 import com.android.hq.androidanimationdemo.draggableView.DraggableViewActivity2;
 import com.android.hq.androidanimationdemo.rollingcar.RollingCarActivity;
@@ -73,6 +74,8 @@ public class MainActivity extends Activity {
                 getResources().getString(R.string.desc_draggable_view), DraggableViewActivity.class));
         list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_draggable_view_2),
                 getResources().getString(R.string.desc_draggable_view_2), DraggableViewActivity2.class));
+        list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_drag_drop),
+                getResources().getString(R.string.desc_drag_drop), DragAndDropActivity.class));
         mListAdapter.updateData(list);
     }
 

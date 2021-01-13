@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.hq.androidanimationdemo" >
+    package="com.android.hq.androidanimationdemo">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -19,41 +19,39 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".bounceballpath.BounceBallPathActivity"
-                  android:label="BounceBallPathActivity"
-                  android:screenOrientation="portrait">
-
-        </activity>
-        <activity android:name=".touch3d.ThreeDimensTouchActivity"
-                  android:label="3DTouchActivity"
-                  android:screenOrientation="portrait">
-
-        </activity>
-
-        <activity android:name=".snow.SnowActivity"
-                  android:label="SnowActivity"
-                  android:screenOrientation="portrait">
-
-        </activity>
-
-        <activity android:name=".swipe.SwipeActivity"
-                  android:label="SwipeActivity"
-                  android:screenOrientation="portrait">
-
-        </activity>
-
-        <activity android:name=".rollingcar.RollingCarActivity"
-                  android:label="RollingCarActivity"
-                  android:screenOrientation="portrait">
-
-        </activity>
-        <activity android:name=".draggableView.DraggableViewActivity"
+        <activity
+            android:name=".bounceballpath.BounceBallPathActivity"
+            android:label="BounceBallPathActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".touch3d.ThreeDimensTouchActivity"
+            android:label="3DTouchActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".snow.SnowActivity"
+            android:label="SnowActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".swipe.SwipeActivity"
+            android:label="SwipeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".rollingcar.RollingCarActivity"
+            android:label="RollingCarActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".draggableView.DraggableViewActivity"
             android:label="DraggableViewActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".draggableView.DraggableViewActivity2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".draggableView.DraggableViewActivity2"
             android:label="DraggableViewActivity2"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".draganddrop.DragAndDropActivity"
+            android:label="DragAndDropActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:screenOrientation="portrait"></activity>
 
     </application>
 
