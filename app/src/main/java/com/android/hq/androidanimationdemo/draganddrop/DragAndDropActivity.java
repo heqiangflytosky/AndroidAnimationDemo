@@ -4,10 +4,11 @@ import android.content.ClipData;
 import android.content.ClipDescription;
 import android.graphics.Canvas;
 import android.graphics.Point;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.DragEvent;
+import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -34,9 +35,7 @@ public class DragAndDropActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 ClipData.Item item = new ClipData.Item(mImageView.getTag().toString());
-                //ClipData代表剪贴板中剪切数据
                 ClipData dragData = new ClipData(v.getTag().toString(), new String[]{ClipDescription.MIMETYPE_TEXT_PLAIN}, item);
-                //拖放阴影构造者对象，用于构造拖放阴影。
                 mImageView.startDrag(dragData, new View.DragShadowBuilder(mImageView), null, 0);
                 return false;
             }
@@ -120,6 +119,8 @@ public class DragAndDropActivity extends AppCompatActivity {
                 case DragEvent.ACTION_DRAG_ENTERED:
                     Log.e("Test","Target DragEvent.ACTION_DRAG_ENTERED");
                     mTargetView.setBackgroundColor(0xff0000ff);
+                    // 震感反馈
+                    mTargetView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                     return true;
 
                 case DragEvent.ACTION_DRAG_EXITED:
