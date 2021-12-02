@@ -30,4 +30,7 @@
 
     <string name="title_drag_drop">Drop And Drop API</string>
     <string name="desc_drag_drop">演示Android Drop And Drop API 的使用</string>
+
+    <string name="title_dynamic_animation">DynamicAnimation</string>
+    <string name="desc_dynamic_animation">演示DynamicAnimation API 的使用</string>
 </resources>

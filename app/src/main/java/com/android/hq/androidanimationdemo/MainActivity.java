@@ -11,6 +11,7 @@ import com.android.hq.androidanimationdemo.bounceballpath.BounceBallPathActivity
 import com.android.hq.androidanimationdemo.draganddrop.DragAndDropActivity;
 import com.android.hq.androidanimationdemo.draggableView.DraggableViewActivity;
 import com.android.hq.androidanimationdemo.draggableView.DraggableViewActivity2;
+import com.android.hq.androidanimationdemo.dynamicanimation.DynamicAnimationActivity;
 import com.android.hq.androidanimationdemo.rollingcar.RollingCarActivity;
 import com.android.hq.androidanimationdemo.snow.SnowActivity;
 import com.android.hq.androidanimationdemo.swipe.SwipeActivity;
@@ -75,6 +76,8 @@ public class MainActivity extends Activity {
                 getResources().getString(R.string.desc_draggable_view_2), DraggableViewActivity2.class));
         list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_drag_drop),
                 getResources().getString(R.string.desc_drag_drop), DragAndDropActivity.class));
+        list.add(new ListAdapter.DataBean(getResources().getString(R.string.title_dynamic_animation),
+                getResources().getString(R.string.desc_dynamic_animation), DynamicAnimationActivity.class));
         mListAdapter.updateData(list);
     }
 
